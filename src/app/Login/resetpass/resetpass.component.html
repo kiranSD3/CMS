@@ -1,0 +1,68 @@
+<div class="parent-box">
+
+    <div class="side-child">
+        <div class="side-btn">
+            <button [ngClass]="bgNewColor" routerLink="/login" (click)="toggleProperty('btn1')"
+                class="side-log">Login</button>
+            <br>
+            <button [ngClass]="bgColor" routerLink="/reset" (click)="toggleProperty('btn2')" class="side-log">Forget
+                Password</button>
+        </div>
+
+    </div>
+
+    <div class="side-contentchild">
+        <div class="topbox">
+            <div class="imgbox">
+                <img class="logoimg" src="images/f-logonew.png" alt="Logo">
+            </div>
+            <div class="headingrow">
+                <h2 class="head-log">RESET PASSWORD</h2>
+            </div>
+        </div>
+        <div class="centerbox">
+            <form action="">
+
+
+                <div class="fields">
+                    <label for="" [style.white-space]="'pre-line'">{{Questions}}</label>
+                    <select>
+                        <option *ngFor="let questions of choose" [value]="questions.ques_value"> {{questions.ques}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="fields">
+                    <label for="">Answer</label>
+                    <input class="lab-3" type="text" placeholder="Enter your Answer">
+                </div>
+
+                <div class="fields" *ngIf="isActive">
+                    <label for="">Password</label>
+                    <input type="password" name="Password" placeholder="New Password">
+                </div>
+
+                <div class="btns">
+                    <button type="button" routerLink="/login" class="btn btn-danger  low-btn">Close</button>
+                    <button type="submit" (click)="checkvalue()" class="btn btn-primary low-btn">Submit</button>
+
+                </div>
+
+                <!-- <div class="linebrk">
+
+                </div>
+
+                <div class="lowcontent-p">
+                    <p class="p-con">or login with</p>
+                </div>
+
+                <div class="lowIcons">
+                    <i class="fa-brands fa-twitter"></i>
+                </div> -->
+
+
+
+            </form>
+        </div>
+    </div>
+</div>

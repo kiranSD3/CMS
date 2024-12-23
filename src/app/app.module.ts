@@ -3,17 +3,43 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './Login/login/login.component';
+import { RegisterComponent } from './Login/register/register.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+import { ResetpassComponent } from './Login/resetpass/resetpass.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { TogglebtnComponent } from './Login/togglebtn/togglebtn.component';
+import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { NavbarComponent } from './Dashboard/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+import { LogServicesService } from '../_services/log-services.service';
+import { LogService } from '../_services/log.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetpassComponent,
+    TogglebtnComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    CommonModule,
+    RouterLink,
+    RouterOutlet,
+    FormsModule  
   ],
-  providers: [
-    provideClientHydration(withEventReplay())
+  providers: [LogServicesService,LogService,
+    provideClientHydration(withEventReplay()),
+    provideAnimationsAsync()
+  
   ],
   bootstrap: [AppComponent]
 })

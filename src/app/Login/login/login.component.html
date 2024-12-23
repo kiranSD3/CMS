@@ -1,0 +1,60 @@
+<div class="parent-box">
+
+    <div class="side-child">
+        <div class="side-btn">
+            <button [ngClass]="bgColor" routerLink="/login" (click)="toggleProperty('btn1')"
+                class="side-log">Login</button>
+            <br>
+            <button [ngClass]="bgNewColor" routerLink="/reset" (click)="toggleProperty('btn2')" class="side-log">Forget
+                Password</button>
+        </div>
+
+    </div>
+
+    <div class="side-contentchild">
+        <div class="topbox">
+            <div class="imgbox">
+                <img class="logoimg" src="images/f-logonew.png" alt="Logo">
+            </div>
+            <div class="headingrow">
+                <h2 class="head-log">LOGIN</h2>
+            </div>
+        </div>
+        <div class="centerbox">
+            <form action="">
+                <div class="fields">
+                    <label for="">username</label>
+                    
+              <input type="text" [(ngModel)]="username" name="username" [(ngModel)]="getValue.userName" placeholder="Enter your Username">
+                    <br>
+                    <small class="warn1" *ngIf="warningmsg">Please enter username</small>
+                </div>
+                <div class="fields">
+                    <label for="">Password</label>
+                    <input type="password" placeholder="Enter your Password">
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="btn btn-danger  low-btn">Close</button>
+                    <button type="button" (click)="validate()"  class="btn btn-primary low-btn">Submit</button>
+
+                </div>
+
+                <div class="linebrk">
+
+                </div>
+
+                <div class="lowcontent-p">
+                    <p class="p-con">or login with</p>
+                </div>
+
+                <div class="lowIcons">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
