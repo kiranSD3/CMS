@@ -16,6 +16,9 @@ import { NavbarComponent } from './Dashboard/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { LogServicesService } from '../_services/log-services.service';
 import { LogService } from '../_services/log.service';
+import { ChildComponent } from './Dashboard/child/child.component';
+import {ReactiveFormsModule} from '@angular/forms'
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { LogService } from '../_services/log.service';
     ResetpassComponent,
     TogglebtnComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -34,11 +38,13 @@ import { LogService } from '../_services/log.service';
     CommonModule,
     RouterLink,
     RouterOutlet,
-    FormsModule  
+    FormsModule ,
+    ReactiveFormsModule,
+ 
   ],
   providers: [LogServicesService,LogService,
     provideClientHydration(withEventReplay()),
-    provideAnimationsAsync()
+    provideAnimationsAsync(), provideHttpClient()
   
   ],
   bootstrap: [AppComponent]

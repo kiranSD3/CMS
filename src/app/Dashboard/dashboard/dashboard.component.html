@@ -1,7 +1,51 @@
-<p>
+<div class="outer-parent">
 
-    counter {{log.counter}}
+    <div class="logo">
+        <img class="top-logo" src="images/f-logonew.png" alt="logo">
+    </div>
 
-</p>
+    <div class="heading">
+        <h3 class="top-reg">
+            REGISTER
+        </h3>
+    </div>
+<form action="" [formGroup]="register" (ngSubmit)="getValue()">
+    <div class="main-content">
+        <!-- <div class="groups">
+            <label  for="" >Username</label>
+            <br>
+            <label for="">Password</label>
+            <br>
+            <label for="">Email</label>
+            <br>
+            <label for="">Phone Number</label>
+        </div> -->
 
-<button class="btn btn-primary" (click)="add()">ADD</button>
+        <div class="groups2">
+            <input  type="text" formControlName="username" placeholder="Enter Your Username">
+            <br>
+             <span *ngIf="validUser && validUser.invalid && validUser.touched" class="span" >Please enter username</span>
+             <br>
+            <input type="text" formControlName="password" placeholder="Enter Your Password">
+            <br>
+            <span *ngIf="validPwd && validPwd.invalid && validPwd.touched" class="span" >Please enter valid password</span>
+            <br>
+            <input type="text"  formControlName="email" placeholder="Enter Your Email">
+            <br>
+            <span class="span" *ngIf="validEmail && validEmail.invalid && validEmail.touched" >Enter Your Email</span>
+            <br>
+            <input type="text" formControlName="number" placeholder="Enter Your Number">
+        </div>
+    </div>
+
+    <div class="btns">
+        <button class="btn btn-danger">Close</button>
+        <button [disabled]="register.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+    </form>
+
+</div>
+
+
+<app-child></app-child>

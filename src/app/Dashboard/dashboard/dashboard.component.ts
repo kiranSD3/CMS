@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { LogService } from '../../../_services/log.service';
+import { LogServicesService } from '../../../_services/log-services.service';
+import { RegisterService } from '../../../_services/register service/register.service';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +13,35 @@ import { LogService } from '../../../_services/log.service';
 })
 export class DashboardComponent {
 
-  constructor (public log: LogService) {}
+  constructor (public log: LogService, public name: LogServicesService, public regis: RegisterService) {}
+
 
   add() {
     this.log.click()
   }
+
+  register = new FormGroup({
+    username: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.minLength(5)),
+    email: new FormControl("", Validators.email),
+    number: new FormControl("", Validators.required)
+
+  });
+
+  getValue(){
+    console.log(this.register.value);
+    
+  }
+
+  get validUser(){
+   return this.register.get("username");
+  }
+
+  get validEmail() {
+   return this.register.get("email");
+  }
+
+  get validPwd() {
+    return this.register.get("password");
+   }
 }
