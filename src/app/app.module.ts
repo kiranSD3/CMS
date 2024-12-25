@@ -16,9 +16,17 @@ import { NavbarComponent } from './Dashboard/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { LogServicesService } from '../_services/log-services.service';
 import { LogService } from '../_services/log.service';
-import { ChildComponent } from './Dashboard/child/child.component';
 import {ReactiveFormsModule} from '@angular/forms'
 import { provideHttpClient } from '@angular/common/http';
+import { CustomTableComponent } from './custom-table/custom-table.component';
+import {MatTableModule} from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {   MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ParentComponent } from './Parent-Child/parent/parent.component';
+import { ChildComponent } from './Parent-Child/child/child.component';
+import { ContainerComponent } from './Parent-Child/container/container.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,10 @@ import { provideHttpClient } from '@angular/common/http';
     TogglebtnComponent,
     DashboardComponent,
     NavbarComponent,
-    ChildComponent
+    ChildComponent,
+    CustomTableComponent,
+    ParentComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +51,8 @@ import { provideHttpClient } from '@angular/common/http';
     RouterOutlet,
     FormsModule ,
     ReactiveFormsModule,
+    MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatFormFieldModule
+    
  
   ],
   providers: [LogServicesService,LogService,

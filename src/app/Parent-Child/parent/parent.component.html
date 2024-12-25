@@ -1,0 +1,38 @@
+<div class="containers">
+    <nav>
+
+    </nav>
+
+    <h2 class="reg"> Register</h2>
+    <form  action="">
+
+      <div class="inner-form">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-user"></i></span>
+           <input #username type="text" placeholder="Username">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-user"></i></span>
+           <input #name type="text" placeholder="Name">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-user"></i></span>
+           <input #designation type="text" placeholder="Designation">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-regular fa-user"></i></span>
+           <input #contact type="text" placeholder="Contact">
+          </div>
+
+<button class="btn btn-primary mb-3 m-3" (click)="getEmployee(username.value,name.value, designation.value, contact.value )">Submit</button>
+</div>
+    </form>
+</div>
+
+<!-- <app-child  [empObj]="empObj"></app-child> -->
+
+<!-- //[Username]="empusername" [Name]="empname" [Designation]="empdesignation" [Contact]="empcontact" -->

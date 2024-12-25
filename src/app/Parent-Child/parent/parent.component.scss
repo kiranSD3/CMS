@@ -1,0 +1,26 @@
+nav{
+    background-color: grey;
+    height: 50px;
+    width: 100vw;
+}
+form{
+    position: absolute;
+   top: 20%;
+//    left: 10%;
+   transform: translate(20%, 10%);
+}
+
+.reg{
+    text-align: center;
+}
+
+input{
+    width: 250px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid grey;
+}
+
+.inner-form{
+    display: flex;
+}

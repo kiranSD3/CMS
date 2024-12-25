@@ -1,6 +1,6 @@
 export interface Employee {
     name:string; 
-    age: number;
+    age: string;
     email: string;
     username: string;
     address: string;

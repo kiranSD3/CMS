@@ -1,0 +1,27 @@
+.child{
+ 
+}
+
+.inner-child{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    text-transform: uppercase;
+}
+
+.output{
+    // display: flex;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+.grp{
+    display: flex;
+    gap: 30px;
+}
+
+.child-table{
+    position: absolute;
+    left: 30%;
+    bottom: 45%;
+}

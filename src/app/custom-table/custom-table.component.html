@@ -1,0 +1,97 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="f-name">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('name',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="f-age">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('age',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="f-email">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('email',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username </th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="f-username">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('username',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+
+     <!-- Symbol Column -->
+     <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="f-address">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('address',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+
+       <!-- Symbol Column -->
+    <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef> Contact </th>
+        <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="f-number">
+        <th mat-header-cell *matHeaderCellDef> 
+        <mat-form-field>
+            <input matInput (keyup)="filter('number',$event)" type="text">
+        </mat-form-field>    
+        </th>
+      </ng-container>
+  
+      
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsFilters"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+
+  </table>
+  

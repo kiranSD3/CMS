@@ -30,6 +30,8 @@ export class DashboardComponent {
 
   getValue(){
     console.log(this.register.value);
+    alert('Employee Registered');
+    this.register.reset();
     
   }
 

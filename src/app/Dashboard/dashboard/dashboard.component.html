@@ -11,15 +11,18 @@
     </div>
 <form action="" [formGroup]="register" (ngSubmit)="getValue()">
     <div class="main-content">
-        <!-- <div class="groups">
+        <div class="groups">
             <label  for="" >Username</label>
+            <br>
             <br>
             <label for="">Password</label>
             <br>
+            <br>
             <label for="">Email</label>
             <br>
+            <br>
             <label for="">Phone Number</label>
-        </div> -->
+        </div>
 
         <div class="groups2">
             <input  type="text" formControlName="username" placeholder="Enter Your Username">
@@ -40,7 +43,9 @@
 
     <div class="btns">
         <button class="btn btn-danger">Close</button>
-        <button [disabled]="register.invalid" type="submit" class="btn btn-primary">Submit</button>
+        <button  type="submit" class="btn btn-primary">Submit</button>
+
+        <!-- [disabled]="register.invalid" -->
 
     </div>
     </form>
